@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FlurryController"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "Handling Flurry related APIs, for readablility"
 
 # This description is used to generate tags and improve search results.

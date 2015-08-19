@@ -1,0 +1,19 @@
+PODS:
+  - FlurryController (0.1.0):
+    - FlurrySDK
+  - FlurrySDK (6.7.0):
+    - FlurrySDK/FlurrySDK (= 6.7.0)
+  - FlurrySDK/FlurrySDK (6.7.0)
+
+DEPENDENCIES:
+  - FlurryController (from `../`)
+
+EXTERNAL SOURCES:
+  FlurryController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FlurryController: f18b618002cde84b37bb8459b1d0b30a4f2de6ec
+  FlurrySDK: 671e8d5769ef42a9940854c735b1eee32763eea5
+
+COCOAPODS: 0.37.2

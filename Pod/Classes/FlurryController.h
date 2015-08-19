@@ -14,7 +14,7 @@
 /**
  *  Call this macro during viewWillDisappear to stop recording view controller uptime.
  */
-#define FlurryTimedViewWillDisappear() [FlurryController startTimedLogEventName:[NSString stringWithFormat:@"%@_UpTime", NSStringFromClass([self class])] withParameters:nil]
+#define FlurryTimedViewWillDisappear() [FlurryController stopTimedLogEventName:[NSString stringWithFormat:@"%@_UpTime", NSStringFromClass([self class])] withParameters:nil]
 
 
 /**
@@ -32,6 +32,7 @@
 
 #pragma mark - Class Methods
 
+
 /**
  *  Set API with Key.
  *
@@ -41,12 +42,14 @@
  */
 + (void)setAPIKey:(NSString *)apiKey;
 
+
 /**
  *  Call this method during application:didFinishLaunchingWithOptions:
  *
  *  @param rootViewController RootViewController of your window.
  */
 + (void)startLogAllPageViewsForRootViewController:(UIViewController *)rootViewController;
+
 
 /**
  *  Call this method at applicationWillTerminate:
@@ -55,12 +58,14 @@
  */
 + (void)stopLogAllPageViewsForRootViewController:(UIViewController *)rootViewController;
 
+
 /**
  *  Log event with name, no other parameters.
  *
  *  @param eventName Event Name.
  */
 + (void)logEvent:(NSString *)eventName;
+
 
 /**
  *  Log event with event name & parameters.
@@ -69,6 +74,7 @@
  *  @param parameters Parameter in NSDictionary.
  */
 + (void)logEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters;
+
 
 /**
  *  Start Log with event name & parameter.
@@ -80,6 +86,7 @@
  */
 + (void)startTimedLogEventName:(NSString *)eventName withParameters:(NSDictionary *)parameters;
 
+
 /**
  *  Stop Log with event name & parameter.
  *
@@ -89,5 +96,15 @@
  *  @param parameters Parameter in NSDictionary.
  */
 + (void)stopTimedLogEventName:(NSString *)eventName withParameters:(NSDictionary *)parameters;
+
+
+/**
+ *  log Error with event names.
+ *
+ *  @param eventName Name of the event.
+ *  @param message   Message
+ *  @param error     Error.
+ */
++ (void)logErrorWithEventName:(NSString *)eventName message:(NSString *)message error:(NSError *)error;
 
 @end

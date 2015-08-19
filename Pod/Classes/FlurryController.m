@@ -84,4 +84,11 @@
 }
 
 
++ (void)logErrorWithEventName:(NSString *)eventName message:(NSString *)message error:(NSError *)error
+{
+#ifdef ActivateFlurry
+    [Flurry logError:eventName message:message error:error];
+#endif
+}
+
 @end
